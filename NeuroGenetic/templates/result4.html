@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Result</title>
+  
+  <!-- FontAwesome for icons -->
+  <script src="https://kit.fontawesome.com/47101d2035.js" crossorigin="anonymous"></script>
+  
+  <!-- Bootstrap for styling -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-size: cover;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .center-screen {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .info-box {
+      background-color: #ffffff;
+      border: 1px solid #030303;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      margin: 1rem;
+      width: 90%;
+      max-width: 800px;
+      text-align: left;
+    }
+
+    .info-box img {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .info-box h1, h2 {
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: bolder;
+    }
+
+    h2 {
+      color: red;
+    }
+    h1 {
+      color: rgb(0, 0, 0);
+      font-size: x-large;
+    }
+    span{
+      color: blue;
+    }
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #000000;
+      padding: 5px 15px;
+      color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .header .logo h3 {
+      font-size: 28px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .navbar ul li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+   <!-- Header -->
+   <header class="header">
+    <div class="logo">
+      <h3>NeuroDetect</h3>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'index' %}">Alzheimer</a></li>
+        <li><a href="{% url 'index2' %}">Epileptic Seizure</a></li>
+        <li><a href="{% url 'index3' %}">Huntington</a></li>
+        <li><a href="{% url 'index4' %}">Parkinson</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="center-screen">
+    <div class="info-box">
+      <h2>Parkinson’s Disease Prediction</h2>
+      <img src="{% static 'images/p.jpg' %}" alt="  Awareness">
+      <h1>Prediction: <span class="value">{{result}}</span></h1>
+      
+      <h4>Precautionary Measures</h4>
+<ul>
+  <li>Regular exercise (improves balance and muscle strength).</li>
+  <li>Avoid pesticides and heavy metals (linked to Parkinson’s).</li>
+  <li>Reduce stress (deep breathing, mindfulness, music therapy).</li>
+  <li>Adequate vitamin D intake to protect neurons.</li>
+  <li>Speech therapy if voice and swallowing issues arise.</li>
+</ul>
+
+<h4>Diet Plan</h4>
+<ul>
+  <li>High protein diet (chicken, fish, lentils) but separate from medication times.</li>
+  <li>Omega-3 fatty acids (flaxseeds, walnuts) to reduce inflammation.</li>
+  <li>Antioxidant-rich foods (berries, dark chocolate) to prevent oxidative stress.</li>
+  <li>High-fiber foods (whole grains, fruits, vegetables) to prevent constipation.</li>
+  <li>Limit caffeine and alcohol consumption.</li>
+</ul>
+
+<h4>Medications</h4>
+<ul>
+  <li>Levodopa-Carbidopa (Sinemet) to replenish dopamine.</li>
+  <li>Dopamine agonists (Pramipexole, Ropinirole) to mimic dopamine effects.</li>
+  <li>MAO-B inhibitors (Selegiline, Rasagiline) to slow dopamine breakdown.</li>
+  <li>Anticholinergics (Benztropine) for tremor control.</li>
+</ul>
+
+    </div>
+  </div>
+</body>
+</html>
