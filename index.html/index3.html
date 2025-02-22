@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>NG</title>
+  <script src="https://kit.fontawesome.com/47101d2035.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+  <style>
+     body {
+      margin: 0;
+      padding: 0;
+      
+    }
+    
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
+      margin-top: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
+    }
+    .container{
+        width: 1000px;
+    }
+    h1 {
+      color: #f10505;
+      text-align: center;
+      font-size: 2.5rem;
+      margin-top: 2rem;
+      border: 2px solid black;
+      border-radius: 3px;
+      background-color: aliceblue;
+      padding: 5px;
+      width: 1000px;
+      text-transform: uppercase;
+    }
+    .center-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 56px); /* Adjusted for the height of the navbar */
+    }
+    .btn-custom {
+      background-color: #e74c3c;
+      border-color: #e74c3c;
+    }
+    .btn-custom:hover {
+      background-color: #c0392b;
+      border-color: #c0392b;
+    }
+    label{
+      color: black;
+      font-weight: bolder;
+    }
+    .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000000; /* White background */
+  padding: 5px 15px;
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header .logo h1 {
+  font-size: 28px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar ul li a {
+  color: #ffffff; /* Teal accent */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar ul li a:hover {
+  text-decoration: underline;
+}
+  </style>
+</head>
+<body>
+   <!-- Header -->
+   <header class="header">
+    <div class="logo">
+      <h2>NeuroDetect</h2>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'index' %}">Alzheimer</a></li>
+        <li><a href="{% url 'index2' %}">Epileptic Seizure</a></li>
+        <li><a href="{% url 'index3' %}">Huntington</a></li>
+        <li><a href="{% url 'index4' %}">Parkinson</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="center-div">
+  <div class="container">
+    <h1>huntington disease Prediction</h1><br>
+    <div class="row justify-content-md-center">
+      <div class="col-md-8 form-container">
+        <form action="result3">
+          {% csrf_token %}
+          
+          <!-- Age -->
+          <div class="form-group row">
+            <label for="age" class="col-sm-2 col-form-label form-label">Age:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="age" placeholder="Enter Age" name="Age" required>
+            </div>
+          </div>
+          
+          <!-- Gender -->
+          <div class="form-group row">
+            <label for="gender" class="col-sm-2 col-form-label form-label">Gender:</label>
+            <div class="col-sm-10">
+              <select class="form-control" id="gender" name="Gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </div>
+          </div>
+          
+          <!-- CAG_Repeats -->
+          <div class="form-group row">
+            <label for="cag_repeats" class="col-sm-2 col-form-label form-label">CAG Repeats:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="cag_repeats" placeholder="Enter CAG Repeats" name="CAG_Repeats" required>
+            </div>
+          </div>
+
+          <!-- Motor_Score -->
+          <div class="form-group row">
+            <label for="motor_score" class="col-sm-2 col-form-label form-label">Motor Score:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="motor_score" placeholder="Enter Motor Score" name="Motor_Score" required>
+            </div>
+          </div>
+
+          <!-- Cognitive_Score -->
+          <div class="form-group row">
+            <label for="cognitive_score" class="col-sm-2 col-form-label form-label">Cognitive Score:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="cognitive_score" placeholder="Enter Cognitive Score" name="Cognitive_Score" required>
+            </div>
+          </div>
+
+          <!-- Behavioral_Score -->
+          <div class="form-group row">
+            <label for="behavioral_score" class="col-sm-2 col-form-label form-label">Behavioral Score:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="behavioral_score" placeholder="Enter Behavioral Score" name="Behavioral_Score" required>
+            </div>
+          </div>
+
+          <!-- Family_History -->
+          <div class="form-group row">
+            <label for="family_history" class="col-sm-2 col-form-label form-label">Family History:</label>
+            <div class="col-sm-10">
+              <select class="form-control" id="family_history" name="Family_History" required>
+                <option value="0">Yes</option>
+                <option value="1">No</option>
+              </select>
+            </div>
+          </div>
+         
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

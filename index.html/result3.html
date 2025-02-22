@@ -1,0 +1,153 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Result</title>
+  
+  <!-- FontAwesome for icons -->
+  <script src="https://kit.fontawesome.com/47101d2035.js" crossorigin="anonymous"></script>
+  
+  <!-- Bootstrap for styling -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-size: cover;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .center-screen {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .info-box {
+      background-color: #ffffff;
+      border: 1px solid #030303;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      margin: 1rem;
+      width: 90%;
+      max-width: 800px;
+      text-align: left;
+    }
+
+    .info-box img {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .info-box h1, h2 {
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: bolder;
+    }
+
+    h2 {
+      color: red;
+    }
+    h1 {
+      color: rgb(0, 0, 0);
+      font-size: x-large;
+    }
+    span{
+      color: blue;
+    }
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #000000;
+      padding: 5px 15px;
+      color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .header .logo h3 {
+      font-size: 28px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .navbar ul li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+   <!-- Header -->
+   <header class="header">
+    <div class="logo">
+      <h3>NeuroDetect</h3>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'index' %}">Alzheimer</a></li>
+        <li><a href="{% url 'index2' %}">Epileptic Seizure</a></li>
+        <li><a href="{% url 'index3' %}">Huntington</a></li>
+        <li><a href="{% url 'index4' %}">Parkinson</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="center-screen">
+    <div class="info-box">
+      <h2>Huntington Disease Prediction</h2>
+      <img src="{% static 'images/h.jpg' %}" alt="Awareness">
+      <h1>Prediction: <span class="value">{{result}}</span></h1>
+      
+      <h4>Precautionary Measures</h4>
+<ul>
+  <li>Genetic counseling for individuals with a family history.</li>
+  <li>Physical therapy to maintain mobility and prevent falls.</li>
+  <li>Cognitive exercises to slow mental decline.</li>
+  <li>Speech and swallowing therapy for communication and eating issues.</li>
+  <li>Psychological support (counseling, stress management techniques).</li>
+</ul>
+
+<h4>Diet Plan</h4>
+<ul>
+  <li>High-calorie diet (due to high energy expenditure from involuntary movements).</li>
+  <li>Healthy fats (avocados, nuts, olive oil) for brain health.</li>
+  <li>Protein-rich foods (eggs, lean meat) for muscle maintenance.</li>
+  <li>Easy-to-swallow foods (smoothies, soups, mashed foods).</li>
+  <li>Avoid caffeine, alcohol, and processed foods that worsen symptoms.</li>
+</ul>
+
+<h4>Medications</h4>
+<ul>
+  <li>Tetrabenazine, Deutetrabenazine to control involuntary movements.</li>
+  <li>Antipsychotics (Olanzapine, Risperidone) for mood swings and aggression.</li>
+  <li>Antidepressants (SSRIs like Fluoxetine) for depression and anxiety.</li>
+  <li>Muscle relaxants (Baclofen) for muscle rigidity.</li>
+</ul>
+    </div>
+  </div>
+</body>
+</html>
