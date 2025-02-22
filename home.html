@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neurogenetic Disease Detection</title>
+  <link rel="stylesheet" href="style.css"> 
+  <link href="https://fonts.googleapis.com/css2?family=Times+New+Roman&family=Roboto:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    /* General Styles */
+body {
+  font-family: 'Times New Roman', serif, 'Roboto', sans-serif, 'Open Sans', sans-serif;
+  background-color: #f4f4f4; /* Light background */
+  color: #333; /* Dark text for contrast */
+  margin: 0;
+  padding: 0;
+}
+
+/* Greeting Page */
+.greeting-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('image/brain/brain.jpg') no-repeat center center/cover; /* Background image for greeting page */
+  color: #000000;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.greeting-container {
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for text */
+  padding: 40px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 500px;
+  border: 2px solid #ddd; /* Light Gray border */
+}
+
+.greeting-container h1 {
+  font-size: 38px;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+.greeting-container span {
+  color: #00796b; /* Teal accent */
+}
+
+.emoji {
+  font-size: 50px;
+}
+
+#greeting-page .btn-primary {
+  padding: 12px 25px;
+  font-size: 16px;
+  background: #00796b; /* Teal background */
+  border: 1px solid #00796b; /* Matching border */
+  color: white;
+  border-radius: 51px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#greeting-page .btn-primary:hover {
+  background: #004d40; /* Darker teal */
+  border-color: #004d40; /* Darker border */
+}
+
+/* Main Page */
+.home-page {
+  display: flex;
+  background: url('images/greetingpage.jpg') no-repeat center center/cover; /* Background image for home page */
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000000; /* White background */
+  padding: 5px 15px;
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header .logo h1 {
+  font-size: 28px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar ul li a {
+  color: #ffffff; /* Teal accent */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 50px;
+  background: linear-gradient(135deg, #ffffff, #e0f7fa); /* Light gradient */
+  color: #333;
+  border-radius: 15px;
+  border: 2px solid #ddd; /* Light Gray Border */
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.hero p {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.hero .hero-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+/* Features Section */
+#features {
+  padding: 40px 20px;
+  background: #ffffff; /* White background */
+  border-radius: 10px;
+  border: 2px solid #ddd; /* Light Gray Border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.features-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.feature {
+  background: #f4f4f4; /* Light gray */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 30%;
+  border: 1px solid #ddd; /* Light Gray Border */
+}
+
+.feature h3 {
+  color: #00796b; /* Teal accent */
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Prediction Tool */
+#prediction {
+  background: #ffffff; /* White background */
+  padding: 40px 20px;
+  border-radius: 10px;
+  border: 2px solid #ddd; /* Light Gray Border */
+}
+
+#prediction form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #f4f4f4; /* Light gray */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ddd; /* Light Gray Border */
+}
+
+#prediction label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#prediction input {
+  width: 90%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#prediction .btn-primary {
+  background: #00796b; /* Teal background */
+  padding: 12px 20px;
+  border: 2px solid #00796b; /* Matching border */
+  color: white;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#prediction .btn-primary:hover {
+  background: #004d40; /* Darker teal */
+  border-color: #004d40; /* Darker border */
+}
+
+/* Result */
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #00796b; /* Teal accent */
+  text-align: center;
+}
+
+/* About Section */
+#about, #contact {
+  text-align: center;
+  padding: 60px 20px;
+  background: #ffffff; /* White background */
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-text {
+  width: 50%;
+  font-size: 18px;
+  color: #333;
+}
+
+.about-image-container {
+  width: 40%;
+}
+
+.about-image {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #ddd; /* Light Gray Border */
+}
+
+/* Contact Section */
+.contact-container {
+  background: #ffffff; /* White background */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ddd; /* Light Gray Border */
+}
+
+.contact-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-container ul li {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.contact-container ul li a {
+  color: #00796b; /* Teal accent */
+}
+
+.contact-container ul li i {
+  margin-right: 10px;
+  color: #00796b;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #00796b; /* Teal background */
+  color: white;
+  margin-top: 50px;
+  border: 2px solid #ddd; /* Light Gray Border */
+}
+
+/* Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+p{
+  text-align: justify;
+}
+.sub{
+  /* position: relative;
+  left: 130px; */
+  text-align: center;
+}
+
+    .box {
+        width: 250px; /* Adjust size as needed */
+        height: 200px;
+        text-align: center;
+       
+        border-radius: 10px;
+        padding: 10px;
+        background-color: #f8f8f8;
+    }
+    .box img {
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .label {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 5px;
+    }
+    .tool{
+      position: relative;
+      left: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+  
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <h1>NeuroDetect</h1>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#prediction">Prediction</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home Page -->
+  <section id="home" class="hero">
+    <h1>Neurogenetic Disease Detection</h1>
+    <p class="sub">Utilizing AI and advanced machine learning models to predict and detect neurogenetic diseases.</p>
+    <img src="static/images/brain.jpg" class="hero-image" alt="Brain Image">
+  </section>
+
+  <!-- Features Section -->
+  <section id="features">
+    <h2>Key Points :-</h2>
+    <div class="features-container">
+      <div class="feature">
+        <h3>Huntington’s Disease:</h3>
+        <p>A genetic neurodegenerative disorder caused by a mutation in the HTT gene, leading to progressive motor dysfunction, cognitive decline, and psychiatric symptoms.
+        </p>
+      </div>
+      <div class="feature">
+        <h3>Epilepsy</h3>
+        <p>A neurological disorder characterized by recurrent, unprovoked seizures due to abnormal electrical activity in the brain.</p>
+      </div>
+      <div class="feature">
+        <h3>Alzheimer’s Disease</h3>
+        <p>A progressive neurodegenerative disorder marked by memory loss, cognitive impairment, and behavioral changes, primarily due to the accumulation of amyloid plaques and tau tangles in the brain.</p>
+      </div>
+      <div class="feature">
+        <h3>Parkinson’s Disease</h3>
+        <p>A neurodegenerative disorder caused by the loss of dopamine-producing neurons in the substantia nigra, leading to tremors, rigidity, bradykinesia, and postural instability.</p>
+      </div>
+    </div>
+  </section>
+  <h2 class="tool">Predicting Tools :-</h2>
+  <!-- Prediction Tool Section -->
+  <section id="prediction" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+    
+    <div class="box">
+        <a href="{% url 'index' %}">
+            <img src="static/images/1.jpg" alt="A">
+            <div class="label">Alzheimer’s Disease</div>
+        </a>
+    </div>
+    <div class="box">
+        <a href="{% url 'index2' %}">
+            <img src="static/images/2.jpg" alt="B">
+            <div class="label">Epilepsy Disease</div>
+        </a>
+    </div>
+    <div class="box">
+        <a href="{% url 'index3' %}">
+            <img src="static/images/3.jpg" alt="C">
+            <div class="label">Huntington’s Disease</div>
+        </a>
+    </div>
+    <div class="box">
+        <a href="{% url 'index4' %}">
+            <img src="static/images/4.jpg" alt="D">
+            <div class="label">Parkinson’s Disease</div>
+        </a>
+    </div>
+</section>
+
+
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>About Us</h2>
+        <p>We are Arham Chowdary and Zahid Wani, passionate researchers and developers dedicated to advancing medical technology. Our project, Neurogenetic, is an innovative neurogenetic disorder prediction system designed to assist in early diagnosis and risk assessment. Combining expertise in machine learning, genetics, and healthcare, we aim to provide an efficient and accessible tool for identifying conditions like Huntington’s, Alzheimer’s, and Parkinson’s disease. Our mission is to bridge the gap between technology and medicine, empowering healthcare professionals and patients with reliable predictive insights.</p>
+      </div>
+      <div class="about-image-container">
+        <img src="static/images/face.jpg" alt="About Image" class="about-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-container">
+      <ul>
+        <li><i class="fas fa-phone-alt"></i> +91 9149564329</li>
+        <li><i class="fas fa-envelope"></i> arhamchowdary14@gmail.com</li>
+        
+        <li><i class="fas fa-envelope"></i> zahidwani465@gmail.com</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="sub">&copy; 2025 Neurogenetic. All rights reserved.</p>
+  </footer>
+
+ 
+</body>
+</html>

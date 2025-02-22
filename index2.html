@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>NG</title>
+  <script src="https://kit.fontawesome.com/47101d2035.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+  <style>
+     body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
+      margin-top: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      color: #f10505;
+      text-align: center;
+      font-size: 2.5rem;
+      margin-top: 2rem;
+      border: 2px solid black;
+      border-radius: 3px;
+      background-color: aliceblue;
+      padding: 5px;
+      width: 800px;
+      position: relative;
+      left: 160px;
+      text-transform: uppercase;
+    }
+    .center-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 56px); /* Adjusted for the height of the navbar */
+    }
+    .btn-custom {
+      background-color: #e74c3c;
+      border-color: #e74c3c;
+    }
+    .btn-custom:hover {
+      background-color: #c0392b;
+      border-color: #c0392b;
+    }
+    label{
+      color: black;
+      font-weight: bolder;
+    }
+    .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000000; /* White background */
+  padding: 5px 15px;
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header .logo h1 {
+  font-size: 28px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar ul li a {
+  color: #ffffff; /* Teal accent */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar ul li a:hover {
+  text-decoration: underline;
+}
+  </style>
+</head>
+<body>
+   <!-- Header -->
+   <header class="header">
+    <div class="logo">
+      <h2>NeuroDetect</h2>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'index' %}">Alzheimer</a></li>
+        <li><a href="{% url 'index2' %}">Epileptic Seizure</a></li>
+        <li><a href="{% url 'index3' %}">Huntington</a></li>
+        <li><a href="{% url 'index4' %}">Parkinson</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="center-div">
+  <div class="container">
+    <h1>Epileptic Seizure Recognition </h1><br>
+    <div class="row justify-content-md-center">
+      <div class="col-md-8 form-container">
+        <form action="result2">
+          {% csrf_token %}
+
+            <!-- X1 -->
+            <div class="form-group row">
+              <label for="X1" class="col-sm-2 col-form-label form-label">X1:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="X1" placeholder="X1" name="X1" required>
+              </div>
+            </div>
+
+            <!-- X2 -->
+            <div class="form-group row">
+              <label for="X2" class="col-sm-2 col-form-label form-label">X2:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="X2" placeholder="X2" name="X2" required>
+              </div>
+            </div>
+
+            <!-- X3 -->
+            <div class="form-group row">
+              <label for="X3" class="col-sm-2 col-form-label form-label">X3:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="X3" placeholder="X3" name="X3" required>
+              </div>
+            </div>
+
+            <!-- X4 -->
+            <div class="form-group row">
+              <label for="X4" class="col-sm-2 col-form-label form-label">X4:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="X4" placeholder="X4" name="X4" required>
+              </div>
+            </div>
+
+            <!-- X5 -->
+            <div class="form-group row">
+              <label for="X5" class="col-sm-2 col-form-label form-label">X5:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="X5" placeholder="X5" name="X5" required>
+              </div>
+            </div>
+
+            <!-- X6 -->
+            <div class="form-group row">
+              <label for="X6" class="col-sm-2 col-form-label form-label">X6:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="X6" placeholder="X6" name="X6" required>
+              </div>
+            </div>
+
+            <!-- X7 -->
+            <div class="form-group row">
+              <label for="X7" class="col-sm-2 col-form-label form-label">X7:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="X7" placeholder="X7" name="X7" required>
+              </div>
+            </div>
+
+            <!-- X8 -->
+            <div class="form-group row">
+              <label for="X8" class="col-sm-2 col-form-label form-label">X8:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="X8" placeholder="X8" name="X8" required>
+              </div>
+            </div>
+
+            <!-- X9 -->
+            <div class="form-group row">
+              <label for="X9" class="col-sm-2 col-form-label form-label">X9:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="X9" placeholder="X9" name="X9" required>
+              </div>
+            </div>
+
+            <!-- X10 -->
+            <div class="form-group row">
+              <label for="X10" class="col-sm-2 col-form-label form-label">X10:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="X10" placeholder="X10" name="X10" required>
+              </div>
+            </div>
+                   
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
